@@ -1,6 +1,7 @@
 package com.biblioteca.sistema.sistema_biblioteca.model;
 import com.biblioteca.sistema.sistema_biblioteca.model.Autor;
 import com.biblioteca.sistema.sistema_biblioteca.model.Editora;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +11,9 @@ public class Livro {
     private Long id;
 
     private String titulo;
-    private int anoPublicacao;
+
+    @Column(name= "ano_publicacao")
+    private Integer anoPublicacao;
     private String isbn;
 
     @ManyToOne
@@ -37,11 +40,12 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public int getAnoPublicacao() {
-        return anoPublicacao;
+    public Integer getAnoPublicacao() {
+        return this.anoPublicacao;
     }
 
-    public void setAnoPublicacao(int anoPublicacao) {
+    @JsonProperty("anoPublicacao")
+    public void setAnoPublicacao(Integer anoPublicacao) {
         this.anoPublicacao = anoPublicacao;
     }
 
