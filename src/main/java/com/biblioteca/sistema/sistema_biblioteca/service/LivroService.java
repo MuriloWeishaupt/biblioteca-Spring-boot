@@ -32,6 +32,7 @@ public class LivroService {
             livro.setAutor(livroAtualizado.getAutor());
             livro.setEditora(livroAtualizado.getEditora());
             livro.setAnoPublicacao(livroAtualizado.getAnoPublicacao());
+            livro.setGenero(livroAtualizado.getGenero());
             livro.setIsbn(livroAtualizado.getIsbn());
 
             return livroRepository.save(livro);

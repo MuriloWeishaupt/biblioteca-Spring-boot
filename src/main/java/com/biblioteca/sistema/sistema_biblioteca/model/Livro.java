@@ -16,6 +16,18 @@ public class Livro {
     private Integer anoPublicacao;
     private String isbn;
 
+    @Column(nullable = false)
+    private String genero;
+
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     @ManyToOne
     @JoinColumn(name = "autor_id")
     private Autor autor;
